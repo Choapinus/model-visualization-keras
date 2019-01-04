@@ -36,6 +36,13 @@ plt.title("Grad-CAM")
 heat_map = cv2.resize(heat_map, (89*2, 109*2))
 plt.imshow(heat_map)
 
+# opencv2 channels are in order BGR. Transform the image to RGB to save it like a heatmap
+# https://physiophile.wordpress.com/2017/01/12/why-opencv-uses-bgr-not-rgb/
+destRGB = cv2.cvtColor(heat_map, cv2.COLOR_BGR2RGB)
+destRGB = cv2.resize(destRGB, (89*3, 109*3))
+cv2.imshow("image", destRGB)
+# cv2.waitKey(0)
+
 plt.figure(1)
 plt.title("Saliency")
 plt.imshow(heat_map_saliency)
@@ -43,3 +50,8 @@ plt.imshow(heat_map_saliency)
 plt.show()
 
 
+"""
+ver en que se esta fijando la red neuronal.
+Cual es la parte mas relevante del rostro de una persona 
+en la que se fija la red neuronal para distinguir entre hombre y mujer. Por qué
+"""

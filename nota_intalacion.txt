@@ -1,0 +1,10 @@
+para solucionar el error "Intel MKL FATAL ERROR: Cannot load libmkl_avx2.so or libmkl_def.so"
+
+https://github.com/ContinuumIO/anaconda-issues/issues/720
+en el link se sugiere reinstalar numpy
+
+conda install -f numpy
+
+
+si el opencv tira error, removerlo e instalar desde el channel menpo.
+si el error persiste, desinstalar e instalar con pip install opencv-python
